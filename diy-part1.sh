@@ -33,10 +33,10 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 # git clone 获取 openwrt-packages 仓库
 git clone https://github.com/kenzok8/openwrt-packages
-# 赋予删除的权限
 shopt -s extglob
-# 删除除了 smartdns 插件以外的所有插件
 rm -rf openwrt-packages/!(smartdns|luci-app-smartdns)
+cp -r openwrt-packages/{smartdns,luci-app-smartdns} package/
+rm -rf openwrt-packages
 
 mkdir package/small
 pushd package/small
