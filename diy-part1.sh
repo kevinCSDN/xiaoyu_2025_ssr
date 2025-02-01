@@ -12,7 +12,7 @@
 #
 
 # Uncomment a feed source
-sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+#sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 
 #rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 
@@ -20,6 +20,16 @@ sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf
 # sed -i '2i src-git small https://github.com/soapmancn/small' feeds.conf.default
 #sed -i '3i src-git nas https://github.com/linkease/nas-packages.git;master' feeds.conf.default
 #sed -i '4i src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' feeds.conf.default
+
+# git clone 获取 openwrt-packages 仓库
+git clone https://github.com/kenzok8/openwrt-packages
+
+# 赋予删除的权限
+shopt -s extglob
+
+# 删除除了 smartdns 插件以外的所有插件
+rm -rf openwrt-packages/!(smartdns|luci-app-smartdns)
+
 
 注释掉新版luci
 sed -i 's|^#src-git luci https://github.com/coolsnowwolf/luci$|src-git luci https://github.com/coolsnowwolf/luci|' feeds.conf.default
