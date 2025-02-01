@@ -21,23 +21,22 @@
 #sed -i '3i src-git nas https://github.com/linkease/nas-packages.git;master' feeds.conf.default
 #sed -i '4i src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' feeds.conf.default
 
-# git clone 获取 openwrt-packages 仓库
-git clone https://github.com/kenzok8/openwrt-packages
-
-# 赋予删除的权限
-shopt -s extglob
-
-# 删除除了 smartdns 插件以外的所有插件
-rm -rf openwrt-packages/!(smartdns|luci-app-smartdns)
 
 
-注释掉新版luci
+
+# 注释掉新版luci
 sed -i 's|^#src-git luci https://github.com/coolsnowwolf/luci$|src-git luci https://github.com/coolsnowwolf/luci|' feeds.conf.default
 sed -i 's|^src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05$|#src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|' feeds.conf.default
 ./scripts/feeds update -a && rm -rf feeds/luci/applications/luci-app-mosdns && rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns}
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
+# git clone 获取 openwrt-packages 仓库
+git clone https://github.com/kenzok8/openwrt-packages
+# 赋予删除的权限
+shopt -s extglob
+# 删除除了 smartdns 插件以外的所有插件
+rm -rf openwrt-packages/!(smartdns|luci-app-smartdns)
 
 mkdir package/small
 pushd package/small
