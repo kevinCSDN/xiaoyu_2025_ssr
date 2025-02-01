@@ -38,11 +38,12 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 #mkdir package/small
 #pushd package/small
 
-# 1. 克隆 small 源
+# 拉取依赖库
 git clone --depth=1 https://github.com/kenzok8/small package/small
 
-# 2. 删除不需要的软件包
-#rm -rf package/small/{brook,dns2tcp,gn,luci-app-bypass,luci-app-fchomo,luci-app-homeproxy,luci-app-mihomo,luci-app-mosdns,luci-app-openclash,luci-app-passwall2,luci-app-ssr-plus,mihomo,mosdns,pdnsd-alt,redsocks2,shadow-tls,ssocks,trojan-go,v2dat,v2raya}
+# 删除不需要的依赖包
+rm -rf package/small/{brook,dns2tcp,gn,luci-app-bypass,luci-app-fchomo,luci-app-homeproxy,luci-app-mihomo,luci-app-mosdns,luci-app-openclash,luci-app-passwall2,luci-app-ssr-plus,mihomo,mosdns,pdnsd-alt,redsocks2,shadow-tls,ssocks,trojan-go,v2dat,v2raya}
+
 
 # 3. 安装所有 feeds
 ./scripts/feeds install -a
