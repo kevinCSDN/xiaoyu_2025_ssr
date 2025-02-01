@@ -53,7 +53,7 @@ git clone --depth=1 https://github.com/kenzok8/small package/small
 #rm -rf ./feeds/packages/net/mosdns
 #rm -rf feeds/packages/net/v2ray-geodata
 rm -rf feeds/luci/themes/luci-theme-argon
-#rm -rf feeds/luci/themes/luci-theme-bootstrap
+rm -rf feeds/luci/themes/luci-theme-bootstrap
 rm -rf feeds/luci/themes/luci-app-argon-config
 
 #passwall2
