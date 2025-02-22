@@ -37,7 +37,8 @@ shopt -s extglob
 rm -rf openwrt-packages/!(smartdns|luci-app-smartdns)
 cp -r openwrt-packages/{smartdns,luci-app-smartdns} package/
 rm -rf openwrt-packages
-
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 mkdir package/small
 pushd package/small
 
