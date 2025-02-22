@@ -129,9 +129,6 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a -f
 
-    - name: Run make defconfig to clean dependencies
-      run: cd openwrt && make defconfig
-
     - name: Openwrt AutoUpdate
       run: |
         TEMP=$(date +"OpenWrt_%Y%m%d_%H%M%S_")$(git rev-parse --short HEAD)
