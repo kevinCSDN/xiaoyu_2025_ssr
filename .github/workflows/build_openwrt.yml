@@ -24,7 +24,7 @@ on:
         default: 'true'
 
 env:
-  REPO_URL: https://github.com/kevinCSDN/lede_5.4.273
+  REPO_URL: https://github.com/kevinCSDN/lede_5.4.258
   #REPO_URL: https://github.com/tangtao-xp1/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
