@@ -42,7 +42,7 @@ mkdir package/small
 pushd package/small
 
 #克隆源码
-git clone --depth=1 https://github.com/fw876/helloworld.git
+#git clone --depth=1 https://github.com/fw876/helloworld.git
 #git clone https://github.com/kevinCSDN/lua-maxminddb.git  #git lua-maxminddb 依赖
 
 #git clone https://github.com/kevinCSDN/luci-app-vssr-plus.git  
